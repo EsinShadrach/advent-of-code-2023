@@ -13,9 +13,8 @@ pub fn get_digit(word: &str) -> Option<i32> {
     number_map.insert("eight", 8);
     number_map.insert("nine", 9);
 
-    if let Some(&value) = number_map.get(word) {
-        Some(value)
-    } else {
-        None
+    match number_map.get(word) {
+        Some(&value) => Some(value),
+        None => None,
     }
 }
